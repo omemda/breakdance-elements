@@ -7,11 +7,11 @@ use function Breakdance\Elements\PresetSections\getPresetSection;
 
 if(get_option('stormas_ajax_search_enable', 'true') == 'true'){
 \Breakdance\ElementStudio\registerElementForEditing(
-    "BreakdanceCustomElements\\AjaxSearch",
+    "BreakdanceCustomElements\\WooSearch",
     \Breakdance\Util\getdirectoryPathRelativeToPluginFolder(__DIR__)
 );
 
-class AjaxSearch extends \Breakdance\Elements\Element
+class WooSearch extends \Breakdance\Elements\Element
 {
     static function uiIcon()
     {
@@ -35,7 +35,7 @@ class AjaxSearch extends \Breakdance\Elements\Element
 
     static function name()
     {
-        return 'Ajax Search';
+        return 'Woo Search';
     }
 
     static function className()
