@@ -1,13 +1,13 @@
 <?php
 
-namespace BreakdanceLayoutsCustomElements;
+namespace BreakdanceCustomElements;
 
 use function Breakdance\Elements\c;
 use function Breakdance\Elements\PresetSections\getPresetSection;
 
 if(get_option('stormas_ajax_search_enable', 'true') == 'true'){
 \Breakdance\ElementStudio\registerElementForEditing(
-    "BreakdanceLayoutsCustomElements\\AjaxSearch",
+    "BreakdanceCustomElements\\AjaxSearch",
     \Breakdance\Util\getdirectoryPathRelativeToPluginFolder(__DIR__)
 );
 
