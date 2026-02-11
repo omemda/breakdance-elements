@@ -1,0 +1,174 @@
+
+{% if content.options.show_excerpt %}
+.stormasexcerpt {display:block;}
+{% else %}
+.stormasexcerpt {display:none;}
+{% endif %}
+
+{% if content.options.show_featured_image %}
+.stormasimage {display:block;}
+{% else %}
+.stormasimage {display:none;}
+{% endif %}
+
+%%SELECTOR%% {
+  max-width: 100%;
+  width: {{ design.design.width.style }};
+}
+
+%%SELECTOR%% .ajax-search-bar {
+ {{ macros.spacing_padding_all(design.design.padding) }}
+  background-color: {{ design.design.background_color }};
+ {{ macros.borders(design.design.borders) }}
+
+}
+
+%%SELECTOR%% .ajax-search-bar input#ajax-search-input {
+    {% if content.options.show_categories %}
+  margin-right:10px;
+{% else %}
+  margin-right:0px;
+{% endif %}
+  padding: {{ design.search_bar.height.style }};
+  {{ macros.borders(design.search_bar.borders) }}
+  {{ macros.typography(design.search_bar.typography, globalSettings) }}
+  }
+
+
+
+%%SELECTOR%% .ajax-search-bar select#ajax-search-category {
+   {{ macros.borders(design.search_bar.borders) }}
+  {{ macros.typography(design.search_bar.typography, globalSettings) }}
+padding: {% if design.search_bar.height.number %}{{ design.search_bar.height.number - 1 }}px{% else %}19px{% endif %};
+
+}
+
+
+
+%%SELECTOR%% #ajax-search-results {
+ background-color: {{ design.results.background_color }};
+ {{ macros.borders(design.results.borders) }}
+max-height:{{ design.results.max_height.style }};
+}
+
+
+%%SELECTOR%% #ajax-search-results li:hover {
+  background: {{ design.results.background_hover_color }}
+}
+
+%%SELECTOR%% #ajax-search-results img {
+  max-width: {{ design.results.image_width.style }};
+  {{ macros.borders(design.results.image_borders) }}
+}
+
+%%SELECTOR%% #ajax-search-results a {
+{{ macros.typography(design.results.title_typography, globalSettings) }}
+}
+
+
+%%SELECTOR%% #ajax-search-results p {
+  {{ macros.typography(design.results.excerpt_typography, globalSettings) }}
+}
+  %%SELECTOR%% .loading {
+  {{ macros.typography(design.search_bar.loading_typography, globalSettings) }}
+        }
+
+@media screen and (max-width: 600px) {
+  %%SELECTOR%% .ajax-search-bar {
+    flex-direction: column;
+    align-items: stretch;
+   {% if content.options.show_categories %}
+ gap:10px;
+{% else %}
+ gap:0px;
+{% endif %}
+         }
+  
+  %%SELECTOR%% .ajax-search-bar > #ajax-search-results{
+    margin-right:10px;
+  }
+  
+  
+  %%SELECTOR%% .ajax-search-bar select#ajax-search-category,
+  %%SELECTOR%% .ajax-search-bar input#ajax-search-input {
+    width: 100%;
+  }
+  %%SELECTOR%% .ajax-search-bar select#ajax-search-category {
+    margin-bottom: 0px; /* gap between the category dropdown and search input */
+  }
+}
+
+%%SELECTOR%% #show-all-results {
+  {% if content.options.hide_show_all_results_button %}
+display:none;
+{% else %}
+display:inline-block;
+{% endif %}
+  
+  width:{{ design.all_results_button.width.style }};
+  
+       background-color: {{ design.all_results_button.background_color }};
+     {{ macros.typography(design.all_results_button.typography, globalSettings) }}
+  {{ macros.borders(design.all_results_button.borders) }}
+      }
+   %%SELECTOR%% #show-all-results:hover {
+      background-color: {{ design.all_results_button.background_color_hover }};
+       {{ macros.typographyWithHoverableColorAndEffects(design.all_results_button.typography) }}
+    }
+
+%%SELECTOR%% #ajax-search-input::placeholder {
+  {{ macros.typography(design.search_bar.typography, globalSettings) }}
+}
+
+%%SELECTOR%% #ajax-search-input::-webkit-input-placeholder {
+ {{ macros.typography(design.search_bar.typography, globalSettings) }}
+}
+
+%%SELECTOR%% #ajax-search-input:-ms-input-placeholder {
+ {{ macros.typography(design.search_bar.typography, globalSettings) }}
+}
+
+%%SELECTOR%% #ajax-search-input::-ms-input-placeholder {
+  {{ macros.typography(design.search_bar.typography, globalSettings) }}
+}
+
+%%SELECTOR%% .ajax-search-bar {
+  position: relative!important; /* Establish positioning context */
+}
+
+%%SELECTOR%% #ajax-search-results {
+  position: absolute!important;
+  top: 100%!important; /* Place directly below the search bar */
+  left: 0!important;
+  right: 0!important;
+  z-index: 1000!important; /* Ensures it sits on top of other content */
+  /* Optional: add a small margin or box shadow if needed */
+  margin-top: 0px;
+}
+ 
+%%SELECTOR%% .stormasexcerpt{text-decoration: none;}
+
+%%SELECTOR%% #ajax-search-results .result-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+%%SELECTOR%% #ajax-search-results .result-link:hover {
+    text-decoration: none;
+}
+
+%%SELECTOR%% #ajax-search-results .stormasimage {
+    flex-shrink: 0;
+}
+
+%%SELECTOR%% #ajax-search-results .result-link > div {
+    flex: 1;
+}
+
+%%SELECTOR%% #ajax-search-results .result-title {
+    color: inherit;
+    text-decoration: none;
+}

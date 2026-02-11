@@ -1,0 +1,55 @@
+{% if isBuilder %}
+<div class="builder-container">
+      {% if content.options.show_categories %}
+  <div class="ajax-search-bar show-categories">
+{% else %}
+  <div class="ajax-search-bar hide-categories">
+{% endif %}
+        <select id="ajax-search-category">
+        <option value="">{{ content.options.all_categories_text }}</option>
+        <option value="category:1">News</option>
+        <option value="category:2">Products</option>
+        <option value="product_cat:5">Clothing</option>
+      </select>
+        <input type="text" id="ajax-search-input" placeholder="{{ content.options.placeholder }}">
+        {% if content.options.simulate_results_area %}
+ <div id="ajax-search-results">
+          <ul>
+          <li>
+            <img class="stormasimage" src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='540' height='540' viewBox='0 0 140 140'%3e%3cpath d='M0 0h140v140H0z' fill='%23e5e7eb'/%3e%3cpath d='M88 82.46H51.8v-4.52l6.74-6.74a1.13 1.13 0 011.6 0l5.23 5.23 12.76-12.77a1.13 1.13 0 011.6 0L88 71.91z' fill='%23e5e7eb'/%3e%3cpath d='M89.48 52.32H50.29a4.52 4.52 0 00-4.52 4.52V84a4.53 4.53 0 004.52 4.52h39.19A4.52 4.52 0 0094 84V56.84a4.52 4.52 0 00-4.52-4.52zm-33.16 5.27a5.28 5.28 0 11-5.27 5.28 5.27 5.27 0 015.27-5.28zM88 82.46H51.8v-4.52l6.74-6.74a1.13 1.13 0 011.6 0l5.23 5.23 12.76-12.77a1.13 1.13 0 011.6 0L88 71.91z' fill='%23d1d5db'/%3e%3c/svg%3e" alt="Sample Post 1">
+            <div>
+              <a href="https://example.com/post-1">Sample Post 1</a>
+              <p class="stormasexcerpt">This is a sample excerpt for Post 1. It gives an idea of what the content looks like.</p>
+            </div>
+          </li>
+          <li>
+            <img class="stormasimage" src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='540' height='540' viewBox='0 0 140 140'%3e%3cpath d='M0 0h140v140H0z' fill='%23e5e7eb'/%3e%3cpath d='M88 82.46H51.8v-4.52l6.74-6.74a1.13 1.13 0 011.6 0l5.23 5.23 12.76-12.77a1.13 1.13 0 011.6 0L88 71.91z' fill='%23e5e7eb'/%3e%3cpath d='M89.48 52.32H50.29a4.52 4.52 0 00-4.52 4.52V84a4.53 4.53 0 004.52 4.52h39.19A4.52 4.52 0 0094 84V56.84a4.52 4.52 0 00-4.52-4.52zm-33.16 5.27a5.28 5.28 0 11-5.27 5.28 5.27 5.27 0 015.27-5.28zM88 82.46H51.8v-4.52l6.74-6.74a1.13 1.13 0 011.6 0l5.23 5.23 12.76-12.77a1.13 1.13 0 011.6 0L88 71.91z' fill='%23d1d5db'/%3e%3c/svg%3e" alt="Sample Post 2">
+            <div>
+              <a href="https://example.com/post-2">Sample Post 2</a>
+              <p class="stormasexcerpt">This is a sample excerpt for Post 2. It provides additional information.</p>
+            </div>
+          </li>
+          <li>
+            <img class="stormasimage" src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='540' height='540' viewBox='0 0 140 140'%3e%3cpath d='M0 0h140v140H0z' fill='%23e5e7eb'/%3e%3cpath d='M88 82.46H51.8v-4.52l6.74-6.74a1.13 1.13 0 011.6 0l5.23 5.23 12.76-12.77a1.13 1.13 0 011.6 0L88 71.91z' fill='%23e5e7eb'/%3e%3cpath d='M89.48 52.32H50.29a4.52 4.52 0 00-4.52 4.52V84a4.53 4.53 0 004.52 4.52h39.19A4.52 4.52 0 0094 84V56.84a4.52 4.52 0 00-4.52-4.52zm-33.16 5.27a5.28 5.28 0 11-5.27 5.28 5.27 5.27 0 015.27-5.28zM88 82.46H51.8v-4.52l6.74-6.74a1.13 1.13 0 011.6 0l5.23 5.23 12.76-12.77a1.13 1.13 0 011.6 0L88 71.91z' fill='%23d1d5db'/%3e%3c/svg%3e" alt="Sample Post 3">
+            <div>
+              <a href="https://example.com/post-3">Sample Post 3</a>
+              <p class="stormasexcerpt">This is a sample excerpt for Post 3. More details go here.</p>
+            </div>
+          </li>
+        </ul>
+    <button id="show-all-results">{{ content.options.show_all_results_button_text }}</button>
+      </div>
+    </div>
+{% else %}
+{% endif %}
+     
+  </div>
+
+
+{% else %}
+%%SSR%%
+{% endif %}
+
+
+
+
